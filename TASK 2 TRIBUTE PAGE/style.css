@@ -1,0 +1,248 @@
+@font-face {
+    font-family: 'Macondo';
+    src: url('./images/Macondo-Regular.ttf') format('woff2'), 
+         url('./images/Macondo-Regular.ttf') format('woff'),
+         url('./images/Macondo-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Macondo', sans-serif;
+}
+
+body {
+    font-family: 'Macondo';
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    color: rgb(138, 127, 127);
+    text-align: center;
+    padding: 50px 0;
+}
+
+.hero .title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out 1s forwards;
+}
+
+/* Biography Section */
+.biography {
+    padding: 40px;
+    background: #ffffff;
+    margin: 20px auto; /* Centers the section horizontally */
+    border-radius: 10px;
+    opacity: 0;
+    animation: slideIn 1.5s ease-out forwards;
+    width: 80%;
+}
+
+.biography h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.biography-img {
+    max-width: 100%;
+    height: 20rem;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* Smooth zoom transition */
+}
+
+
+.biography-img:hover {
+    transform: scale(1.1); /* Zoom in the image */
+}
+
+.biography-1 {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative; /* Positioning for the image container */
+    overflow: hidden; /* Hide the overflow when image zooms */
+}
+
+
+/* Quotes Section */
+.quotes {
+    background-color: #f4f4f4;
+    padding: 30px;
+    margin: 20px auto; /* Centers the section horizontally */
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeInUp 2s ease-out 1s forwards;
+    width: 80%;
+}
+
+.quote {
+    margin-bottom: 15px;
+    font-style: italic;
+    font-size: 1.25rem;
+    padding-top: 10px;
+}
+
+.quote cite {
+    display: block;
+    margin-top: 5px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.quotes h2 {
+    font-size: 2rem;
+}
+
+/* Timeline Section */
+.timeline {
+    padding: 40px;
+    background-color: #e3e3e3;
+    margin: 20px auto; /* Centers the section horizontally */
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeInUp 2s ease-out 1s forwards;
+    width: 80%;
+}
+
+.timeline ul {
+    list-style-type: none;
+    font-size: 1.1rem;
+}
+
+.timeline li {
+    margin-bottom: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #f9f9f9;
+    color: 333;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero .title {
+        font-size: 2.5rem; /* Reduce title size on smaller screens */
+    }
+
+    .hero .subtitle {
+        font-size: 1.25rem; /* Smaller subtitle font */
+    }
+
+    .biography, .quotes, .timeline {
+        width: 90%; /* Increase width to 90% on smaller screens */
+        padding: 20px;
+    }
+
+    .biography-1 {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center the content */
+    }
+
+    .biography-img {
+        height: 15rem; /* Reduce image height on smaller screens */
+    }
+
+    .quote {
+        font-size: 1.15rem; /* Adjust font size for quotes */
+    }
+
+    .timeline ul {
+        font-size: 1rem; /* Reduce font size for timeline */
+    }
+
+    footer {
+        padding: 15px; /* Smaller padding in footer */
+    }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+    .hero .title {
+        font-size: 2rem; /* Smaller title on very small screens */
+    }
+
+    .hero .subtitle {
+        font-size: 1.1rem; /* Further reduce subtitle font */
+    }
+
+    .biography, .quotes, .timeline {
+        width: 95%; /* Full width except for padding */
+    }
+
+    .biography-1 {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center-align elements */
+    }
+
+    .biography-img {
+        height: 12rem; /* Reduce image height even more */
+    }
+
+    .quote {
+        font-size: 1rem; /* Smaller text for quotes */
+    }
+
+    .timeline ul {
+        font-size: 0.95rem; /* Slightly smaller font for timeline */
+    }
+
+    footer {
+        font-size: 0.9rem; /* Reduce footer text size */
+    }
+}
